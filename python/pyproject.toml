@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cps-utility-console"
+version = "0.1.0"
+description = "Industrial-grade CPS Utility Console — sensor stats, unit conversion, alarm checking, IIR filtering"
+authors = [
+    {name = "Dominik Żurek", email = "zdominik170@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+cps-utility-console = "cps_utility_console.main:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+verbosity = 2
+
+[tool.setuptools.packages.find]
+where = ["."]
