@@ -82,8 +82,31 @@ def run_alarm_checker() -> None:
         print(f"  Error: {e}.")
 
 def run_lowpass_filter() -> None:
-    """Placeholder for Low-Pass IIR Filter function."""
-    print(">> Low-Pass IIR Filter — not implemented yet")
+    """Run Low-Pass IIR Filter function."""
+    from cps_utility_console.functions.lowpass_filter import lowpass_filter
+    
+    print("\n--- Low-Pass IIR Filter ---")
+    print("Formula: y[k] = α·x[k] + (1-α)·y[k-1]")
+    
+    n = validators.get_positive_int("How many samples? ")
+    alpha = validators.get_float_in_range("Enter alpha [0.0-1.0]: ", 0.0, 1.0)
+    
+    samples = []
+    for i in range(n):
+        value = validators.get_float(f"Sample {i+1}/{n}: ")
+        samples.append(value)
+    
+    try:
+        filtered = lowpass_filter(samples, alpha)
+        
+        print("\nResults:")
+        print("Index | Input    | Filtered")
+        print("------|----------|----------")
+        for i, (x, y) in enumerate(zip(samples, filtered)):
+            print(f"{i:5} | {x:8.2f} | {y:8.4f}")
+    
+    except ValueError as e:
+        print(f"  Error: {e}")
 
 
 MENU_OPTIONS: dict[str, tuple[str, callable]] = {
