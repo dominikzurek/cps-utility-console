@@ -27,9 +27,38 @@ def run_sensor_stats() -> None:
 
 
 def run_unit_converter() -> None:
-    """Placeholder for Unit Converter function."""
-    print(">> Unit Converter — not implemented yet")
-
+    """Run Unit Converter function."""
+    from cps_utility_console.functions.unit_converter import (
+        convert_temperature,
+        convert_pressure,
+    )
+    
+    print("\n--- Unit Converter ---")
+    conv_type = validators.get_choice(
+        "Convert [T]emperature or [P]ressure? ", ["T", "P"]
+    )
+    
+    if conv_type == "T":
+        value = validators.get_float("Enter temperature value: ")
+        from_unit = validators.get_choice("From unit [C/F/K]: ", ["C", "F", "K"])
+        to_unit = validators.get_choice("To unit [C/F/K]: ", ["C", "F", "K"])
+        
+        try:
+            result = convert_temperature(value, from_unit, to_unit)
+            print(f"\nResult: {value} {from_unit} = {result:.2f} {to_unit}")
+        except ValueError as e:
+            print(f"  Error: {e}")
+    
+    else:  # P
+        value = validators.get_float("Enter pressure value: ")
+        from_unit = validators.get_choice("From unit [BAR/KPA/PSI]: ", ["BAR", "KPA", "PSI"])
+        to_unit = validators.get_choice("To unit [BAR/KPA/PSI]: ", ["BAR", "KPA", "PSI"])
+        
+        try:
+            result = convert_pressure(value, from_unit, to_unit)
+            print(f"\nResult: {value} {from_unit} = {result:.4f} {to_unit}")
+        except ValueError as e:
+            print(f"  Error: {e}")
 
 def run_alarm_checker() -> None:
     """Placeholder for Alarm Threshold Checker function."""
