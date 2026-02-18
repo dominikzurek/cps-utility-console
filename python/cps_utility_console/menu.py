@@ -7,8 +7,23 @@ from cps_utility_console import validators
 
 
 def run_sensor_stats() -> None:
-    """Placeholder for Sensor Statistics function."""
-    print(">> Sensor Statistics — not implemented yet")
+    """Run Sensor Statistics function"""
+    from cps_utility_console.functions.sensor_stats import compute_stats
+
+    print("\n--- Sensor Statistics ---")
+    n = validators.get_positive_int("How many samples? ")
+
+    samples = []
+    for i in range(n):
+        value = validators.get_float(f"Sample {i+1}/{n}: ")
+        samples.append(value)
+
+    result = compute_stats(samples)
+    print("\nResults:")
+    print(f"  Mean:   {result['mean']:.4f}")
+    print(f"  Min:    {result['min']:.4f}")
+    print(f"  Max:    {result['max']:.4f}")
+    print(f"  StdDev: {result['stddev']:.4f}")
 
 
 def run_unit_converter() -> None:
