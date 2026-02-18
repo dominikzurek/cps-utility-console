@@ -49,7 +49,7 @@ def run_unit_converter() -> None:
         except ValueError as e:
             print(f"  Error: {e}")
     
-    else:  # P
+    else:
         value = validators.get_float("Enter pressure value: ")
         from_unit = validators.get_choice("From unit [BAR/KPA/PSI]: ", ["BAR", "KPA", "PSI"])
         to_unit = validators.get_choice("To unit [BAR/KPA/PSI]: ", ["BAR", "KPA", "PSI"])
@@ -61,9 +61,25 @@ def run_unit_converter() -> None:
             print(f"  Error: {e}")
 
 def run_alarm_checker() -> None:
-    """Placeholder for Alarm Threshold Checker function."""
-    print(">> Alarm Threshold Checker — not implemented yet")
+    """Run Alarm Threshold Checker function."""
+    from cps_utility_console.functions.alarm_checker import check_alarm
 
+    print("\n--- Alarm Threshold Checker ---")
+    value = validators.get_float("Enter sensor value: ")
+    low = validators.get_float("Enter LOW threshold: ")
+    high = validators.get_float("Enter HIGH threshold: ")
+
+    try:
+        status = check_alarm(value, low, high)
+
+        if status == "OK":
+            print(f"Status: {status}.")
+        elif status == "ALARM_LOW":
+            print(f"Status: {status} (value below minimum).")
+        else:
+            print(f"Status: {status} (value above maximum).")
+    except ValueError as e:
+        print(f"  Error: {e}.")
 
 def run_lowpass_filter() -> None:
     """Placeholder for Low-Pass IIR Filter function."""
