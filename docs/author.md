@@ -40,7 +40,7 @@ Skills: PLC, fault diagnostics and more
 | Fundamentals of Fluid Power | University of Minnesota | Sep 2024 |
 | Python for Everybody Specialization | University of Michigan | Oct 2024 |
 | Programming SIEMENS S7-1200/1500 — SCL language | KursyAutomatyki.pl | Oct 2023 |
-| C++ Programming Fundamentals | Coursera | 2026 (in progress) |
+| Microsoft Introduction to C++ Programming | Microsoft / Coursera | 2026 (in progress) |
 
 ---
 
