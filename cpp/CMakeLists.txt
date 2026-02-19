@@ -11,6 +11,8 @@ set(SOURCES
     src/unit_converter.cpp
     src/alarm_checker.cpp
     src/lowpass_filter.cpp
+    src/menu.cpp
+    src/main.cpp
 )
 # Include directories
 include_directories(include)
