@@ -8,8 +8,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(SOURCES
     src/validators.cpp
     src/sensor_stats.cpp
+    src/unit_converter.cpp
+    src/alarm_checker.cpp
+    src/lowpass_filter.cpp
 )
-
 # Include directories
 include_directories(include)
 
