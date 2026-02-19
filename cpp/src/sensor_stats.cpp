@@ -3,12 +3,15 @@
  * Author: Dominik Żurek
  */
 
- #include "../include/sensor_stats.hpp"
- #include <cmath>
- #include <algorithm>
+#include "../include/sensor_stats.hpp"
+#include <cmath>
+#include <algorithm>
+#include <stdexcept>
 
- cps::SensorStats cps::computeStats(const std::vector<float>& samples) {
-    
+cps::SensorStats cps::computeStats(const std::vector<float>& samples) {
+    if (samples.empty())
+        throw std::invalid_argument("Samples list cannot be empty.");
+
     float mean = 0.0f;
     for (float x : samples) mean += x;
     mean /= static_cast<float>(samples.size());
@@ -21,5 +24,4 @@
     variance /= static_cast<float>(samples.size());
 
     return {mean, min, max, std::sqrt(variance)};
-
- }
+}
