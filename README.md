@@ -2,7 +2,8 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![C++](https://img.shields.io/badge/C++-17-orange.svg)](https://isocpp.org/)
-[![Tests](https://img.shields.io/badge/tests-17%20passed-brightgreen.svg)](python/tests/)
+[![Python Tests](https://img.shields.io/badge/pytest-17%20passed-brightgreen.svg)](python/tests/)
+[![C++ Tests](https://img.shields.io/badge/Google%20Test-21%20passed-brightgreen.svg)](cpp/tests/)
 
 **Industrial-Grade Command Line Utility for Cyber-Physical Systems**
 
@@ -24,15 +25,13 @@ Dual-implementation (Python + C++) portfolio project demonstrating production-re
 ## 🚀 Quick Start
 
 ### Python Implementation
-
 ```bash
 cd python
 pip install -e . --break-system-packages
 python3 -m cps_utility_console.main
 ```
 
-### C++ Implementation *(Coming Soon)*
-
+### C++ Implementation
 ```bash
 cd cpp && mkdir build && cd build
 cmake .. && make
@@ -42,7 +41,6 @@ cmake .. && make
 ---
 
 ## 📁 Repository Structure
-
 ```
 cps-utility-console/
 ├── docs/                   # Complete design documentation
@@ -52,7 +50,7 @@ cps-utility-console/
 │   ├── testing_strategy.md
 │   └── demo_outputs.md
 │
-├── python/                # Python prototype (COMPLETE ✅)
+├── python/                # Python implementation ✅
 │   ├── cps_utility_console/
 │   │   ├── main.py
 │   │   ├── menu.py
@@ -61,10 +59,10 @@ cps-utility-console/
 │   ├── tests/             # 17 pytest tests
 │   └── README.md
 │
-└── cpp/                   # C++ production target (In Progress)
-    ├── include/
-    ├── src/
-    ├── tests/
+└── cpp/                   # C++ implementation ✅
+    ├── include/           # 6 header files
+    ├── src/               # 7 source files
+    ├── tests/             # 21 Google Test tests
     └── CMakeLists.txt
 ```
 
@@ -72,19 +70,34 @@ cps-utility-console/
 
 ## 🧪 Testing
 
-Python implementation has **100% functional coverage**:
-
+### Python — 17 tests
 ```bash
 cd python
 pytest tests/ -v
 # 17 passed in 0.04s
 ```
 
-Test breakdown:
-- Sensor Statistics: 4 tests
-- Unit Converter: 5 tests
-- Alarm Checker: 4 tests
-- Low-Pass Filter: 4 tests
+| Module | Tests |
+|--------|-------|
+| Sensor Statistics | 4 |
+| Unit Converter | 5 |
+| Alarm Checker | 4 |
+| Low-Pass Filter | 4 |
+
+### C++ — 21 tests
+```bash
+cd cpp && mkdir -p build && cd build
+cmake .. && make
+./cps_tests
+# 21 passed
+```
+
+| Module | Tests |
+|--------|-------|
+| Sensor Statistics | 5 |
+| Unit Converter | 6 |
+| Alarm Checker | 5 |
+| Low-Pass Filter | 5 |
 
 ---
 
@@ -101,8 +114,9 @@ Test breakdown:
 ✅ Clear error messages  
 ✅ Clean code organization  
 ✅ Planning/Design phase (docs/)  
-✅ Implementation phase (Python + C++)  
-✅ Testing/Refinement phase (pytest suite)
+✅ Python prototype implementation  
+✅ C++ production implementation  
+✅ Testing/Refinement phase (pytest + Google Test)
 
 ---
 
