@@ -109,13 +109,13 @@ cmake .. && make
 
 ### Coursera Requirements Met
 
-✅ CLI menu with 4+ functions  
-✅ Input validation for all interactions  
-✅ Clear error messages  
-✅ Clean code organization  
-✅ Planning/Design phase (docs/)  
-✅ Python prototype implementation  
-✅ C++ production implementation  
+✅ CLI menu with 4+ functions
+✅ Input validation for all interactions
+✅ Clear error messages
+✅ Clean code organization
+✅ Planning/Design phase (docs/)
+✅ Python prototype implementation
+✅ C++ production implementation
 ✅ Testing/Refinement phase (pytest + Google Test)
 
 ---
@@ -124,7 +124,7 @@ cmake .. && make
 
 **Dominik Żurek**
 
-Electronics Technician @ Grupa Kęty S.A. | Mechatronics Engineering Student  
+Mechatronics Engineering Student  
 **Certifications:** Microsoft Python Development, Siemens TIA Portal, KUKA Robot Programming
 
 **Career Goal:** Transition from industrial automation to robotics software engineering
