@@ -127,8 +127,6 @@ cmake .. && make
 Mechatronics Engineering Student  
 **Certifications:** Microsoft Python Development, Siemens TIA Portal, KUKA Robot Programming
 
-**Career Goal:** Transition from industrial automation to robotics software engineering
-
 - [GitHub](https://github.com/dominikzurek)
 - [LinkedIn](https://www.linkedin.com/in/zurekdom)
 - Email: zdominik170@gmail.com
